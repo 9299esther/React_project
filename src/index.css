@@ -1,0 +1,33 @@
+.logo{
+ height: 40px;
+ margin: auto;
+ display: block;
+}
+.homePageImg{
+  height: 425px;
+  background-size: cover;
+  background-image: url('./assets/carPix.jpg') ;
+ text-align: center;
+ font-size: x-large;
+}
+.button{
+  border-radius: 5px;
+  padding: 5px;
+  text-decoration: none;
+  background-color: blue;
+  color: aliceblue;
+}
+section{
+  padding: 5px;
+
+}
+form{
+  width: 155px;
+  border: 1px solid black;
+}
+.CarLoist{
+  width:  calc(100% - 157px);
+  height: 200px;
+  border: 1px solid black;
+
+}
