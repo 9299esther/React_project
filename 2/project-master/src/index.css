@@ -1,0 +1,71 @@
+.logo{
+ height: 40px;
+ margin: auto;
+ display: block;
+}
+h2{
+  color: white;
+  padding: 35px;
+
+}
+.homePageImg{
+  height: 425px;
+  background-size: cover;
+  background-image: url('./assets/carPix.jpg') ;
+ text-align: center;
+ font-size: x-large;
+}
+
+.button{
+  border-radius: 5px;
+  padding: 5px;
+  text-decoration: none;
+  background-color: blue;
+  color: aliceblue;
+}
+section{
+  padding: 5px;
+
+}
+form{
+  width: 155px;
+  height: 274px;
+  border: 1px solid black;
+  background-color: rgb(237, 245, 248);
+  border-radius: 5px;
+
+}
+.CarLoist{
+  width:  calc(100% - 157px);
+  height: 120px;
+  border: 1px solid black;
+  background-color: rgb(237, 245, 248);
+  padding: 10px;
+  margin-left: 20px;
+  border-radius: 5px;
+
+}
+.SelectAvehicle{
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+}
+hr{
+  color: blue;
+}
+.carSize{
+  max-width: 100%;
+}
+.carSizeDiv{
+  height: 70px;
+  width: 70px;
+}
+.CarLoist{
+  display: flex;
+  margin-bottom: 5px;
+
+}
+.divCar{
+  padding: 5px;
+
+}
