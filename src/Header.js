@@ -7,6 +7,7 @@ import image from './assets/logo.png'
    return <header>
         <Link to='/' >
         <img src={image} alt="logo" className='logo'/>
+       <hr/>
         </Link>
     </header>
 }

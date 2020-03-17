@@ -1,26 +1,26 @@
 import React from 'react'
-function Least() {
+function Least(props) {
 
-    render() {
-        return <form>
-            <section><label>From:</label> <br /> <input type='date' />
+   
+        return (<form >
+            <section><label>From:</label> <br /> <input name='from' type='date'  onChange={props.chack}/>
             </section>
-            <section><label>To:</label> <br /> <input type='date' />
-            </section>
-            <section>
-                <label>car type:</label><br />
-                <input type='checkbox' name='carType' value={0}/>Little<br />
-                <input type='checkbox' name='carType' value={1}/>family<br />
-                <input type='checkbox' name='carType' value={2}/>commercial<br />
+            <section><label>To:</label> <br /> <input name='to' type='date' onChange={props.chack}/>
             </section>
             <section>
-                <label>Gere:</label><br />
-                <input type='checkbox' name='Gere' value={0}/>Chalk<br />
-                <input type='checkbox' name='Gere' value={1}/>Automatic <br />
+                <label>Car size:</label><br />
+                <input /* checked = {true} */ type='checkbox' name='size0'  onChange={props.chack}/>Little<br />
+                <input /*checked = {true}*/ type='checkbox' name='size1'  onChange={props.chack}/>Family<br />
+                <input /*checked = {true}*/ type='checkbox' name='size2'  onChange={props.chack}/>Commercial<br />
+            </section>
+            <section>
+                <label>Gear:</label><br />
+                <input /*checked = {true}*/ type='checkbox' name='gearMenual' onChange={props.chack}/>Chalk<br />
+                <input /*checked = {true}*/ type='checkbox' name='gearAuto' onChange={props.chack}/>Automatic <br />
             </section>
 
         </form>
-    }
+        )
 }
 
 export default  Least 
