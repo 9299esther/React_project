@@ -39,7 +39,7 @@ export default function Leas() {
             if (e.number === Number(name)) {
                 e.onHolde = true
                 e.toPay = Number(type)
-                // console.log(e);//האובייקט של הרכבים
+                console.log(e);//האובייקט של הרכבים
             }
         });
 
