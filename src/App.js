@@ -5,6 +5,8 @@ import Home from './Home'
 import Leas from './Leas'
 import Payment from './Payment'
 import CarReturn from './CarReturn'
+import Add from './Add'
+import thankYou from './thankYou'
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Route path='/Leas' component={Leas} />
         <Route path='/Payment' component={Payment} />
         <Route path='/CarReturn' component={CarReturn} />
+        <Route path='/Add' component={Add} />
+        <Route path='/thankYou' component={thankYou} />
 
 
       </Switch>

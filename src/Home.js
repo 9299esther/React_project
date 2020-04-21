@@ -7,13 +7,16 @@ export default class Home extends React.Component {
         return <> <div className='homePageImg'>
             <h2>Car <br />Rental</h2>
             <Link to='/Leas' className='button'> Rent a car</Link>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <Link to='/CarReturn' className='button'> Return Car </Link>
+            <div className='addDiv' >
+                <Link to='/Add' className='add' > <b>+</b> </Link>
+            </div>
 
         </div>
-        <p> <b>Did you know:</b> <br/>
+            <p> <b>Did you know:</b> <br />
         The earliest example of cars offered for rent is 1906. The German company Sixt was founded in 1912 under the name Sixt Autofahrten und Selbstfahrer (Sixt Cruising Vehicles and Self Drivers). </p>
-    </>
+        </>
     }
 }

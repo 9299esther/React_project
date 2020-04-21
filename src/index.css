@@ -102,3 +102,27 @@ form,.payment{
 .padding{
   padding-left: 5px;
 }
+.viue{
+  visibility:visible;
+  z-index: 2;
+  background-color: #888888;
+  width: 50%;
+  height: 200%;
+  font-size:xx-large;
+}
+.noViue{
+  visibility: hidden;
+}
+.add{
+  text-decoration: none;
+  color: blue;
+  font-size: xx-large;
+}
+.addDiv{
+  border-radius: 50%;
+  background-color: maroon;
+  border: solid 2px blue;
+  height:36px ;
+  width: 36px;
+  margin: 2%;
+}

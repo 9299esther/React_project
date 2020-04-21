@@ -1,8 +1,9 @@
 import React from 'react'
 import cars from './assets/cars'
+import { Link } from 'react-router-dom'
 
 export default function CarReturn() {
-    let toPay = '0'
+    let toPay = '02'
     function NumInput(num) {
         console.log(num);
 
@@ -12,6 +13,8 @@ export default function CarReturn() {
                 element.onHolde = false
                 element.isRented = false
             }
+            console.log('???');
+            
         });
     }
     return <>
@@ -26,7 +29,7 @@ export default function CarReturn() {
             </section>
             <div className='padding'>
                 <p >Payment Amount:{toPay + ' ₪'}</p>
-                <button>Payment</button>
+                <Link to='/thankYou'  ><button>Payment</button></Link> 
             </div>
         </form>
     </>
