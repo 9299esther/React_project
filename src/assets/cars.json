@@ -1,7 +1,7 @@
 [
     {
-        "onHolde":false,
-        "isRented":false,
+        "onHolde":true,
+        "isRented":true,
         "number": 546445,
         "maker": "Toyota",
         "name": "Corolla",
@@ -11,7 +11,7 @@
         "year": "2019",
         "price": 300.90,
         "kms": "30,000",
-        "toPay": "",
+        "toPay": "500",
         "unAvelebol":["2020-03-03","2020-03-04"]
     },
     {

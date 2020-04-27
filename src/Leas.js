@@ -5,7 +5,7 @@ import cars from './assets/cars'
 
 
 export default function Leas() {
-    const [car, setCar] = React.useState({
+    const [car, setCar] = React.useState( {}/* {
         from: new Date(),
         to: new Date(),
         size0:false,
@@ -13,7 +13,7 @@ export default function Leas() {
         size2:false,
         gearMenual: false,
         gearAuto: false
-    })
+    } */)
 
     const chackDate = (value, from) => {
         if (value < new Date().toISOString().slice(0, 10))//if from/to is an pased date
@@ -36,9 +36,11 @@ export default function Leas() {
         const { name, type } = data.target
         
         cars.forEach(e => {
-            if (e.number === Number(name)) {
-                e.onHolde = true
-                e.toPay = Number(type)
+            console.log(type);
+            
+            if (e.number === Number(name)) {//car number
+                e.onHolde = true //put on holde
+                e.toPay = Number(type) // rent amunt
                 console.log(e);//האובייקט של הרכבים
             }
         });

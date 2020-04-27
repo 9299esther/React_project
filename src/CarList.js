@@ -4,7 +4,6 @@ import cars from './assets/cars'
 
 
 export default function CarList(props) {
-
     const from = props.car.from
     const to = props.car.to
 
@@ -29,10 +28,10 @@ export default function CarList(props) {
 
 
 
-    const filterdCars = cars.filter(c => //only sholde run whan clcked
+    const filterdCars = Object.keys(props.car).length ? cars.filter(c => //only sholde run whan clcked
         (c.size === size0 || c.size === size1 || c.size === size2)
         && (c.gear === gearAuto || c.gear === gearMenual)
-        && (isFree(from, c) && isFree(to, c)))//if free in date
+        && (isFree(from, c) && isFree(to, c))) : cars//if free in date
 
     function numOfDays(from, to) {//הפרש ימים
         from = from.getTime();
@@ -62,7 +61,7 @@ export default function CarList(props) {
             </div>
             <div className='priceDiv'>
                 price:{' '+Math.round(car.price * numberOfDays).toLocaleString()}₪<br /><br />
-                <Link to='/Payment' className='carButton' type={' '+Math.round(car.price * numberOfDays).toLocaleString()} name={car.number} props={props.car}  onClick={props.setOnHolde}  > Book this vehicle </Link>
+                <Link to='/Payment' className='carButton'  ={' '+Math.round(car.price * numberOfDays).toLocaleString()} name={car.number} props={props.car}  onClick={props.setOnHolde}  > Book this vehicle </Link>
             </div>
         </div>)}
 
