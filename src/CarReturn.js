@@ -3,7 +3,14 @@ import cars from './assets/cars'
 /* import { Link } from 'react-router-dom'
  */
 export default function CarReturn() {
-    const [toPay, setToPay] = useState(0) 
+    const [toPay, setToPay] = useState(0)
+
+    /* יש לחייב בגין איחור */
+    function numOfDays(from, to) {//הפרש ימים
+        from = new Date(from).getTime();
+        to = new Date(to).getTime();
+        return parseInt((to - from) / (24 * 3600 * 1000))
+    }
 
     function NumInput(num) {
         num = num.target.value
@@ -11,15 +18,17 @@ export default function CarReturn() {
         if (num / 100000 > 0.9) {//mor then 5 deagets
 
             cars.forEach(element => {
-                if (element.number == num) {
-                    setToPay(Number(element.toPay)+Number(toPay))
+                if (element.number == num) {/* not ===  */
+                    setToPay(Number(element.toPay) + Number(toPay))
                     element.onHolde = false
                     element.isRented = false
-                    element.unAvelebol.splice(0,2)/* מוריד את שתי האיבריםהראשונים */
 
+                    let a = element.unAvelebol[1] === new Date().toISOString().slice(0, 10) ? "good" : numOfDays(element.unAvelebol[1], new Date().toISOString().slice(0, 10))
+                    setToPay(Number(toPay) + a * Number(element.price))
 
-                   
-                    console.log('1: '+ element.unAvelebol  );
+                    element.unAvelebol.splice(0, 2)/* מוריד את שתי האיבריםהראשונים */
+
+                    //   console.log(element);
                 }
             });
         }
@@ -34,7 +43,6 @@ export default function CarReturn() {
         if (e.target.value === 'yes') {
             if (isFull === 1) {
                 setToPay(Number(toPay) - 50)
-                console.log('1');
             }
         }
         if (e.target.value === 'no') {
@@ -58,7 +66,7 @@ export default function CarReturn() {
             <div className='padding'>
                 <p ><b>Payment Amount:</b> <br /> {toPay + ' ₪'}</p>
                 <input type='submit' value="Payment" />
-{/* יאשר גם אם מספר רכב לא קיים */}
+                {/* יאשר גם אם מספר רכב לא קיים */}
             </div>
         </form>
     </>

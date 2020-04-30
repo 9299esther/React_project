@@ -30,24 +30,27 @@ export default function Leas() {
         setCar({ ...car, [name]: ifDate })//update 'car' date, size or gear
 
         chackDate(value, car.from)
+
+        
     }
 
     function setOnHolde(data) {
-        const { name, type } = data.target
-        
+        const { name, type  } = data.target
+
         cars.forEach(e => {
-            console.log(type);
-            
+     
             if (e.number === Number(name)) {//car number
                 e.onHolde = true //put on holde
                 e.toPay = Number(type) // rent amunt
+                /* date update */
+                e.unAvelebol.push(car.from?car.from:new Date(),car.to?car.to:new Date()) /* add to "end" of array */
                 console.log(e);//האובייקט של הרכבים
             }
         });
 
     }
     return <>
-        <h1>Select a vehicle</h1>
+        <h1>Select a vehicle:</h1>
         <div className='SelectAvehicle'> {car.value}
             <Form chack={chack} />{/*chackDate={chackDate} onClick */}
             <CarList car={car} setOnHolde={setOnHolde} />{/* filter */}

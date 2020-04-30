@@ -12,13 +12,13 @@ export default function Payment(props) {
         cars.forEach(element => {
             if (element.onHolde === true)//if free in date
                 element.isRented = true
-                console.log(element.onHolde + element.unAvelebol);
+                // console.log(element.onHolde + element.unAvelebol);
                 
         });
     }
     function handleSubmit(e) {
         e.preventDefault()
-        alert(`תודה ${name}`)
+        alert(`תודה ${name+" "+phone}`)
     }
 /* עדכון טלפון באחסון מקומי */
     // toPay
