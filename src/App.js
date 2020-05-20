@@ -19,6 +19,7 @@ function App() {
         <Route path='/Payment' component={Payment} />
         <Route path='/CarReturn' component={CarReturn} />
         <Route path='/Add' component={Add} />
+       //todo
         <Route path='/thankYou' component={thankYou} />
 
 

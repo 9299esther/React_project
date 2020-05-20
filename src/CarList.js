@@ -28,16 +28,16 @@ export default function CarList(props) {
 
 
 
-    const filterdCars = Object.keys(props.car).length ? cars.filter(c => //only sholde run whan clcked
+    const filterdCars = Object.keys(props.car).length ?
+    JSON.parse(localStorage.allCars).filter(c => //only sholde run whan clicked
         (c.size === size0 || c.size === size1 || c.size === size2)
         && (c.gear === gearAuto || c.gear === gearMenual)
-        && (isFree(from, c) && isFree(to, c))) : cars//if free in date
+        && (isFree(from, c) && isFree(to, c))) 
+        : JSON.parse(localStorage.allCars)//if free in date
 
     function numOfDays(from, to) {//הפרש ימים
-
         from = from.getTime();
         to = to.getTime();
-
         let daydiff = parseInt((to - from) / (24 * 3600 * 1000))
 
         if (daydiff === 0)

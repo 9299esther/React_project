@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import cars from './assets/cars'
-/* import { Link } from 'react-router-dom'
+/*import cars from './assets/cars'
+ import { Link } from 'react-router-dom'
  */
 export default function CarReturn() {
     const [toPay, setToPay] = useState(0)
+    const [carNum, setCarNum] = useState(0)
 
     /* יש לחייב בגין איחור */
     function numOfDays(from, to) {//הפרש ימים
@@ -14,27 +15,41 @@ export default function CarReturn() {
 
     function NumInput(num) {
         num = num.target.value
-
+        setCarNum(num)
         if (num / 100000 > 0.9) {//mor then 5 deagets
 
-            cars.forEach(element => {
+            var allCars = JSON.parse(localStorage.allCars)
+            allCars.forEach(element => {
                 if (element.number == num) {/* not ===  */
+                    console.log('1:'+toPay);
+                    
                     setToPay(Number(element.toPay) + Number(toPay))
-                    element.onHolde = false
-                    element.isRented = false
+                    console.log('2:'+toPay);
 
                     let a = element.unAvelebol[1] === new Date().toISOString().slice(0, 10) ? "good" : numOfDays(element.unAvelebol[1], new Date().toISOString().slice(0, 10))
-                    setToPay(Number(toPay) + a * Number(element.price))
+                    console.log('3:'+toPay);
 
-                    element.unAvelebol.splice(0, 2)/* מוריד את שתי האיבריםהראשונים */
+                    setToPay(Number(toPay) + a * Number(element.price))
+                    console.log('4:'+toPay);
+
 
                     //   console.log(element);
+                    localStorage.setItem("allCars", JSON.stringify(allCars))//updet localstirigh
                 }
             });
         }
     }
     function handleSubmit(e) {
         e.preventDefault()
+        var allCars = JSON.parse(localStorage.allCars)
+        allCars.forEach(element => {
+            if (element.number == carNum) {/* not ===  */
+                element.onHolde = false
+                element.isRented = false
+                element.unAvelebol.sort().splice(0, 2)/* מוריד את שתי האיבריםהראשונים */
+                localStorage.setItem("allCars", JSON.stringify(allCars))//updet localstirigh
+            }
+        });
         alert(`You have returnd your car. and paid ${toPay}  ₪`)
     }
     const [isFull, setIsFull] = useState(0)
@@ -49,6 +64,8 @@ export default function CarReturn() {
             setIsFull(1)
             setToPay(Number(toPay) + 50)
         }
+        console.log(toPay);
+        
     }
     return <>
         <h1>Car Return</h1>

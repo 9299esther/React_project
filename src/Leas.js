@@ -4,8 +4,9 @@ import CarList from './CarList'
 import cars from './assets/cars'
 
 
-export default function Leas() {
-    const [car, setCar] = React.useState( {}/* {
+export default function Leas() {//parse||stringify
+    localStorage.allCars = JSON.stringify(cars)//to add to local storage
+    const [car, setCar] = React.useState({}/* {//will b
         from: new Date(),
         to: new Date(),
         size0:false,
@@ -31,20 +32,23 @@ export default function Leas() {
 
         chackDate(value, car.from)
 
-        
+
     }
 
     function setOnHolde(data) {
-        const { name, type  } = data.target
+        const { name, type } = data.target
 
-        cars.forEach(e => {
-     
+        var allCars = JSON.parse(localStorage.allCars)
+        allCars.forEach(e => {
+
             if (e.number === Number(name)) {//car number
                 e.onHolde = true //put on holde
                 e.toPay = Number(type) // rent amunt
                 /* date update */
-                e.unAvelebol.push(car.from?car.from:new Date(),car.to?car.to:new Date()) /* add to "end" of array */
-                console.log(e);//האובייקט של הרכבים
+                e.unAvelebol.push(car.from ? car.from : new Date(), car.to ? car.to : new Date()) /* add to "end" of array */
+                // console.log(e);//האובייקט של הרכבים
+
+                localStorage.setItem("allCars", JSON.stringify(allCars))//updet localstirigh
             }
         });
 
